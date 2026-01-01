@@ -13,4 +13,7 @@ def test_valid_login():
     login_page.enter_password("password123")
     login_page.click_login()
 
+    #Assertion example:
+    assert "dashboard" in driver.current_url
+
     driver.quit()
