@@ -51,3 +51,14 @@ class LoginPage:
         self.driver.find_element(
             By.CSS_SELECTOR, "button[type='submit']"
         ).click()
+
+
+
+    def get_error_message(self):
+        """
+         Returns the error message displayed on failed login |locator is html id 'flash'
+        """
+        error = self.wait.until(
+            EC.visibility_of_element_located((By.ID, "flash"))
+        )
+        return error.text
